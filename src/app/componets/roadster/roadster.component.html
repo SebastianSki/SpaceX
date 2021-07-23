@@ -1,0 +1,15 @@
+<div class="container">
+  <h2 class="my-3 text-center">{{ roadster.name }}</h2>
+  <p class="my-3">Samochód został wystrzelony {{ roadster.launch_date_utc | data }}. Obecnie orbituje z prędkością {{ roadster.speed_kph | km }}km/h.
+    Przebywa na orbicie już {{ roadster.period_days | km }} dni. Znajduje się w odległości {{roadster.earth_distance_km | km}} km od Ziemi.
+  </p>
+
+  <div class="row">
+    <div *ngFor="let image of roadster.flickr_images" class="col-4 p-3">
+      <img src="{{ image }}" alt="roadster" class="img-fluid p-3 img-border" (click)="this.spacexapi.getFullImg(image)">
+    </div>
+  </div>
+  <div class="image-full" *ngIf="this.spacexapi.isLarge" (click)="this.spacexapi.isLarge = false">
+    <img src="{{ this.spacexapi.imagesrc}}" class="mx-auto img-fluid">
+  </div>
+</div>

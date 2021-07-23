@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="p-3 col-6">
+      <p>ID: {{ drago.id }}</p>
+      <p>Nazwa: {{ drago.name }}</p>
+      <p>Materiał osłony: {{ drago.heat_shield.material }}</p>
+      <p>Pojemność załogi: {{drago.crew_capacity}}</p>
+      <p>Opis: {{drago.description}}</p>
+    </div>
+    <div class="col-6">
+      <div *ngFor="let image of drago.flickr_images" class="p-2">
+        <img src="{{ image }}" alt="dragon" class="img-fluid img-border" (click)="this.spacexapi.getFullImg(image)">
+      </div>
+    </div>
+  </div>
+  <div class="image-full" *ngIf="this.spacexapi.isLarge" (click)="this.spacexapi.isLarge = false">
+    <img src="{{ this.spacexapi.imagesrc }}" class="mx-auto img-fluid img-border my-5" >
+  </div>
+</div>
+
+

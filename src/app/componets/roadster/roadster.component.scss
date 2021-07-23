@@ -1,0 +1,13 @@
+.card-border{
+  border:.5px solid grey;
+  border-radius: 3rem;
+}
+.img-border{
+  border-radius: 3rem;
+}
+.image-full{
+  position:absolute;
+  inset:0;
+  background: black;
+  display: flex;
+}

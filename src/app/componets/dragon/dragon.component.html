@@ -1,0 +1,12 @@
+<div *ngIf="dragons != undefined" class="container">
+  <div class="row">
+    <div class="col" *ngFor="let dragon of dragons">
+      <div class="dragon-card card p-3 m-5" routerLink="/dragon-detail/{{dragon.id}}">
+        <p>ID:{{ dragon.id }}</p>
+        <p>NAZWA:{{ dragon.name }}</p>
+        <p>TYP:{{ dragon.type }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

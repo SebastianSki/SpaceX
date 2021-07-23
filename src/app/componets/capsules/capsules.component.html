@@ -1,0 +1,13 @@
+<div *ngIf="capsules != undefined" class="container">
+  <div class="row">
+    <div class="col" *ngFor="let capsule of capsules">
+      <div class="capsules-card card p-3 m-5" routerLink="/capsule-detail/{{capsule.id}}">
+        <p>ID:{{ capsule.id }}</p>
+        <p>LAST UPDATE:{{ capsule.last_update }}</p>
+        <p>STATUS:{{ capsule.status}}</p>
+        <p>TYPE:{{ capsule.type }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
